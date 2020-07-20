@@ -17,6 +17,7 @@ else
  echo " Lendo o arquivo $ARQUIVO, aguarde.." 
 fi
 sleep 2
+
 #Criando While para ler as colunas dentro da lista de csv. Utilizando o Case para seguir algumas opções de acordo com a entrada de "VAR".
 while read USUARIO SENHA GRUPO TELEFONE
  do
@@ -43,7 +44,10 @@ gpasswd -a $USUARIO $GROUP ;;
 exit ;;
 esac
 done<$ARQUIVO
-IFS=$OLIFS
+IFS=$OLDIFS
 CONTADOR=$(wc -w < $ARQUIVO)
 #wc -w para ler a quantida real de linhas.
 echo "Procedimento realizado com  $CONTADOR usuários."
+
+
+
